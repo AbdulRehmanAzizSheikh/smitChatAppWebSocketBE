@@ -1,4 +1,4 @@
-const socket = io()
+const socket = io("https://smitchatappwebsocketbe-production.up.railway.app/")
 
 const chatForm = document.getElementById("chat-form")
 const chatInput = document.getElementById("chat-input")
