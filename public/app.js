@@ -1,11 +1,10 @@
 const socket = io("https://smitchatappwebsocketbe-production.up.railway.app/")
 
-const chatForm = document.getElementById("chat-form")
+const sendButton = document.getElementById("send")
 const chatInput = document.getElementById("chat-input")
 const messages = document.getElementById("messages")
 
-chatForm.addEventListener("submit", (event) => {
-  event.preventDefault()
+sendButton.addEventListener("click", (event) => {
   const message = chatInput.value.trim()
   if (!message) return
 
