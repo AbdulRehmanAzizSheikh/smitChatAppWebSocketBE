@@ -18,11 +18,10 @@ io.on("connection", (socket) => {
   })
 
   socket.on("disconnect", () => {
-    console.log("user disconnected:", socket.id)
-    users.filter((user) => {
-      io.emit("connectedUsers", users.length)
-      return socket.id !== user.id
-    })
+    console.log("user disconnected:", socket.id);
+    users.splice(users.indexOf(socket.id), 1);
+    io.emit("connectedUsers", users.length)
+    console.log("connected users:", users)
   })
 })
 
