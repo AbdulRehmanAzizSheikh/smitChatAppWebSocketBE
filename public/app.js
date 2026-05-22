@@ -23,3 +23,6 @@ socket.on("chat message", (msg) => {
   messages.appendChild(li)
   window.scrollTo(0, document.body.scrollHeight)
 })
+socket.on("connectedUsers",(users)=>{
+  document.getElementById("connected-users").innerText = `Connected Users: ${users}`
+})
