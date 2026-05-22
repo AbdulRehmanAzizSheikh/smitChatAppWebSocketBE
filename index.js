@@ -1,6 +1,5 @@
 import express from "express"
 import http from "http"
-import { fileURLToPath } from "url"
 import { Server } from "socket.io"
 
 const app = express()
@@ -22,16 +21,8 @@ io.on("connection", (socket) => {
   })
 })
 
-const PORT = process.env.PORT || 3000
-function startServer(port = PORT) {
-  server.listen(port, () => {
-    console.log("server is listening on port", port)
-  })
-}
-
-const isDirectRun = process.argv[1] === fileURLToPath(import.meta.url)
-if (isDirectRun) {
-  startServer()
-}
-
-export { app, server, io, startServer }
+// const PORT = 3000
+// server.listen(PORT, () => {
+//   console.log("server is listening on port", PORT)
+// })
+export default server
